@@ -2,9 +2,13 @@
 title = "Starting with Experience"
 date = 2026-10-17
 weight = 1
-description = "The Kālāma Sutta, skillful means, and the two truths offer a way into Buddhist ideas without asking us to accept them on authority alone."
 taxonomies = { tags = ["buddhism", "epistemology", "philosophy", "ethics"] }
 +++
+
+The Kālāma Sutta, skillful means, and the two truths offer a way into Buddhist
+ideas without asking us to accept them on authority alone.
+
+<!-- excerpt -->
 
 This is the first of three essays about the Buddhist ideas that
 have shaped how I think about experience, selfhood, and action. I am not trying

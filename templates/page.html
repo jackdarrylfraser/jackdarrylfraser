@@ -21,6 +21,7 @@
         {% set heading_date_display = "" %}
         {% set heading_description = "" %}
         {% set heading_tags = page.taxonomies.tags %}
+        {% set heading_show_tags = false %}
         {% if page.date %}
         {% set heading_date = page.date %}
         {% set heading_date_display = page.date | date(format="%B %e, %Y") %}
@@ -29,6 +30,37 @@
         <div class="post-content">
           {{ page.content | safe }}
         </div>
+        {% if page.ancestors %}
+        {% set parent_section_path = page.ancestors | last %}
+        {% set work_section = get_section(path=parent_section_path) %}
+        {% if work_section.ancestors | length > 1 and work_section.pages | length > 1 %}
+        <nav class="series-navigation" aria-label="Work pagination">
+          <span class="series-previous">
+            {% if page.lower %}
+            {% set previous_section_path = page.lower.ancestors | last %}
+            {% if previous_section_path == parent_section_path %}
+            <a href="{{ page.lower.permalink }}">Previous: {{ page.lower.title }}</a>
+            {% endif %}
+            {% endif %}
+          </span>
+          <span class="series-count">
+            {% for series_page in work_section.pages %}
+            {% if series_page.permalink == page.permalink %}
+            Part {{ loop.index }} of {{ loop.length }}
+            {% endif %}
+            {% endfor %}
+          </span>
+          <span class="series-next">
+            {% if page.higher %}
+            {% set next_section_path = page.higher.ancestors | last %}
+            {% if next_section_path == parent_section_path %}
+            <a href="{{ page.higher.permalink }}">Next: {{ page.higher.title }}</a>
+            {% endif %}
+            {% endif %}
+          </span>
+        </nav>
+        {% endif %}
+        {% endif %}
       </article>
     </main>
   </body>

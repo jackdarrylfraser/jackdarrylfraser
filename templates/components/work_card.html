@@ -17,15 +17,24 @@
   {% elif page.extra.date %}
   <time class="post-meta" datetime="{{ page.extra.date }}">{{ page.extra.date | date(format="%B %e, %Y") }}</time>
   {% endif %}
-  {% if page.description %}
+  {% if page.content %}
+  {% set excerpt_parts = page.content | split(pat="<!-- excerpt -->") %}
+  {% if excerpt_parts | length > 1 %}
+  <div class="post-card-excerpt">{{ excerpt_parts | first | safe }}</div>
+  {% elif page.description %}
+  <p>{{ page.description }}</p>
+  {% endif %}
+  {% elif page.description %}
   <p>{{ page.description }}</p>
   {% endif %}
   {% if page.pages %}
-  {% set tags = page.extra.tags %}
+  {% set tags = [] %}
+  {% set tag_pages = page.pages %}
   {% else %}
   {% set tags = page.taxonomies.tags %}
+  {% set tag_pages = [] %}
   {% endif %}
-  {% if tags %}
+  {% if tags or tag_pages %}
   {% include "components/tag_list.html" %}
   {% endif %}
 </article>

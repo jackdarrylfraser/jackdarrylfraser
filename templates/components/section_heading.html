@@ -13,14 +13,19 @@
   </div>
   <div class="section-heading-content">
     <h1{% if heading_id %} id="{{ heading_id }}"{% endif %}>{{ heading_title }}</h1>
-    {% if heading_date or heading_tags %}
+    {% if heading_date or heading_tags or heading_show_tags %}
     <div class="section-heading-meta">
       {% if heading_date %}
       <time class="post-meta" datetime="{{ heading_date }}">{{ heading_date_display }}</time>
       {% endif %}
-      {% if heading_tags %}
+      {% if heading_tags or heading_show_tags %}
       {% if heading_date %}<span class="section-heading-divider" aria-hidden="true">-</span>{% endif %}
       {% set tags = heading_tags %}
+      {% if heading_show_tags %}
+      {% set tag_pages = heading_tag_pages %}
+      {% else %}
+      {% set tag_pages = [] %}
+      {% endif %}
       {% include "components/tag_list.html" %}
       {% endif %}
     </div>

@@ -2,9 +2,13 @@
 title = "Intention and Continuity"
 date = 2026-10-19
 weight = 3
-description = "Intention, dependent origination, and mind-stream bring the discussion back to how actions shape experience."
 taxonomies = { tags = ["buddhism", "epistemology", "philosophy", "ethics"] }
 +++
+
+Intention, dependent origination, and mind-stream bring the discussion back to
+how actions shape experience.
+
+<!-- excerpt -->
 
 ## Intention matters
 

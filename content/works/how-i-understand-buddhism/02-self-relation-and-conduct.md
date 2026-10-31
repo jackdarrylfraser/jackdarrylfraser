@@ -2,9 +2,13 @@
 title = "Self, Relation, and Conduct"
 date = 2026-10-18
 weight = 2
-description = "The questions of non-self and interdependence lead from the experience of mind into ethical ways of living."
 taxonomies = { tags = ["buddhism", "epistemology", "philosophy", "ethics"] }
 +++
+
+The questions of non-self and interdependence lead from the experience of mind
+into ethical ways of living.
+
+<!-- excerpt -->
 
 In the first part, I described framings for how I find Buddhist teachings the most acciesible
 rather than conclusions to accept on authority. Here I use those framings as way to view buddhist concepts in a similar order to how they were exposed to me when I was first learning them. 

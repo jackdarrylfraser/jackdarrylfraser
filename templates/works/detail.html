@@ -20,18 +20,14 @@
         {% set heading_date = "" %}
         {% set heading_date_display = "" %}
         {% set heading_description = "" %}
-        {% set heading_tags = section.extra.tags %}
+        {% set heading_tags = [] %}
+        {% set heading_show_tags = section.pages | length > 0 %}
+        {% set heading_tag_pages = section.pages %}
         {% if section.extra.date %}
         {% set heading_date = section.extra.date %}
         {% set heading_date_display = section.extra.date | date(format="%B %e, %Y") %}
         {% endif %}
-        {% if section.description %}
-        {% set heading_description = section.description %}
-        {% endif %}
         {% include "components/section_heading.html" %}
-        <div class="post-content">
-          {{ section.content | safe }}
-        </div>
         {% if section.pages %}
         <h2>In this work</h2>
         <ol class="work-pages">
@@ -39,9 +35,10 @@
           <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
           {% endfor %}
         </ol>
-          {% set first_page = section.pages | first %}
-          <p><a href="{{ first_page.permalink }}">Start reading</a></p>
-          {% endif %}
+        {% endif %}
+        <div class="post-content">
+          {{ section.content | safe }}
+        </div>
       </article>
     </main>
   </body>
