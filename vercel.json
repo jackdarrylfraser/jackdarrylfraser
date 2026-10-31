@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "other",
+  "framework": "zola",
   "installCommand": "curl -fsSL https://github.com/getzola/zola/releases/download/v0.23.6/zola-v0.23.6-x86_64-unknown-linux-gnu.tar.gz | tar -xz",
   "buildCommand": "if [ \"$VERCEL_ENV\" = \"production\" ]; then BASE_URL=\"$VERCEL_PROJECT_PRODUCTION_URL\"; else BASE_URL=\"$VERCEL_URL\"; fi && ./zola build --base-url \"https://$BASE_URL\"",
   "outputDirectory": "public"
