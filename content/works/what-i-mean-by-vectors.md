@@ -1,6 +1,7 @@
 +++
 title = "What I Mean When I Talk About Vectors"
 date = 2026-10-20
+weight = 20261020
 description = "Vectors can be useful ways to describe direction and growth, but a site's tags and writing may communicate them better than fixed categories."
 taxonomies = { tags = ["vectors", "writing", "knowledge"] }
 +++

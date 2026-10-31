@@ -1,11 +1,8 @@
 +++
 title = "How I Understand Buddhism: Self, Relation, and Conduct"
 date = 2026-10-18
+weight = 2
 description = "The questions of non-self and interdependence lead from the experience of mind into ethical ways of living."
-taxonomies = { tags = ["buddhism", "epistemology", "ethics"] }
-
-[extra]
-series = { title = "How I Understand Buddhism", part = 2 }
 +++
 
 In the first part, I described framings for how I find Buddhist teachings the most acciesible

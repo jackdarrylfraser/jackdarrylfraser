@@ -1,0 +1,43 @@
+<article class="post-card">
+  {% if page.pages %}
+  {% if post_heading_level == 3 %}
+  <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+  {% else %}
+  <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+  {% endif %}
+  {% elif page.extra.series %}
+  {% set series_section = get_section(path=page.extra.series.path) %}
+  {% if post_heading_level == 3 %}
+  <h3><a href="{{ series_section.permalink }}">{{ series_section.title }}</a></h3>
+  {% else %}
+  <h2><a href="{{ series_section.permalink }}">{{ series_section.title }}</a></h2>
+  {% endif %}
+  {% else %}
+  {% if post_heading_level == 3 %}
+  <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+  {% else %}
+  <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+  {% endif %}
+  {% endif %}
+  {% if page.date %}
+  <time class="post-meta" datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+  {% elif page.extra.date %}
+  <time class="post-meta" datetime="{{ page.extra.date }}">{{ page.extra.date | date(format="%B %e, %Y") }}</time>
+  {% endif %}
+  {% if page.description %}
+  <p>{{ page.description }}</p>
+  {% endif %}
+  {% if page.pages %}
+  {% set tags = page.extra.tags %}
+  {% elif page.extra.series %}
+  {% set series_section = get_section(path=page.extra.series.path) %}
+  {% set tags = series_section.extra.tags %}
+  {% elif page.extra.tags %}
+  {% set tags = page.extra.tags %}
+  {% else %}
+  {% set tags = page.taxonomies.tags %}
+  {% endif %}
+  {% if tags %}
+  {% include "components/tag_list.html" %}
+  {% endif %}
+</article>

@@ -8,41 +8,8 @@
   </head>
   <body>
     <main class="site-main">
-      <section aria-labelledby="latest-posts">
-        <div class="section-heading">
-          <h2 id="latest-posts">Recent writing</h2>
-          <nav class="section-links" aria-label="More content">
-            <a href="{{ get_url(path='tags/') }}">View all tags</a>
-          </nav>
-        </div>
-        {% if paginator.pages %}
-        <ul class="post-list">
-          {% set post_heading_level = 3 %}
-          {% for page in paginator.pages %}
-          <li>
-            {% include "post_card.html" %}
-          </li>
-          {% endfor %}
-        </ul>
-        {% else %}
-        <p>No posts yet.</p>
-        {% endif %}
-        {% if paginator.previous or paginator.next %}
-        <nav class="pagination" aria-label="Post pages">
-          <span class="pagination-previous">
-          {% if paginator.previous %}
-          <a href="{{ paginator.previous }}">Previous</a>
-          {% endif %}
-          </span>
-          <span class="pagination-count">Page {{ paginator.current_index }} of {{ paginator.number_pagers }}</span>
-          <span class="pagination-next">
-          {% if paginator.next %}
-          <a href="{{ paginator.next }}">Next</a>
-          {% endif %}
-          </span>
-        </nav>
-        {% endif %}
-      </section>
+      {% set listing_title = "Recent writing" %}
+      {% include "works/listing.html" %}
     </main>
   </body>
 </html>

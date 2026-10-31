@@ -1,0 +1,14 @@
+{% set series_section = get_section(path=page.extra.series.path) %}
+<nav class="series-navigation" aria-label="Series navigation">
+  {% if page.lower %}
+  <a class="series-previous" href="{{ page.lower.permalink }}">Previous: {{ page.lower.title }}</a>
+  {% else %}
+  <a class="series-previous" href="{{ series_section.permalink }}">Series overview</a>
+  {% endif %}
+  <span class="series-count">Part {{ page.extra.series.part }} of {{ series_section.pages | length }}</span>
+  {% if page.higher %}
+  <a class="series-next" href="{{ page.higher.permalink }}">Next: {{ page.higher.title }}</a>
+  {% else %}
+  <a class="series-next" href="{{ series_section.permalink }}">Series overview</a>
+  {% endif %}
+</nav>

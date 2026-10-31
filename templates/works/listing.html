@@ -1,0 +1,26 @@
+<section aria-labelledby="works-heading">
+  {% set works = load_data(path="data/works.toml") %}
+  <div class="section-heading">
+    <h1 id="works-heading">{{ listing_title }}</h1>
+    <nav class="section-links" aria-label="More content">
+      <a href="{{ get_url(path='tags/') }}">View all tags</a>
+    </nav>
+  </div>
+  {% if works.works %}
+  <ul class="post-list">
+    {% set post_heading_level = 2 %}
+    {% for work in works.works %}
+    {% if work.kind == "section" %}
+    {% set page = get_section(path=work.path) %}
+    {% else %}
+    {% set page = get_page(path=work.path) %}
+    {% endif %}
+    <li>
+      {% include "components/work_card.html" %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No works yet.</p>
+  {% endif %}
+</section>

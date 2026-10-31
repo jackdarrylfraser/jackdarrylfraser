@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ section.title }} | {{ config.title | default(value="Blog") }}</title>
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+  </head>
+  <body>
+    <main class="site-main">
+      <nav class="section-links work-navigation" aria-label="Work navigation">
+        <a href="{{ get_url(path='') }}">Back to all works</a>
+      </nav>
+      <article>
+        <header>
+          <h1>{{ section.title }}</h1>
+          {% if section.extra.date %}
+          <time class="post-meta" datetime="{{ section.extra.date }}">{{ section.extra.date | date(format="%B %e, %Y") }}</time>
+          {% endif %}
+          {% if section.description %}
+          <p class="intro">{{ section.description }}</p>
+          {% endif %}
+        </header>
+        <div class="post-content">
+          {{ section.content | safe }}
+        </div>
+        {% set tags = section.extra.tags %}
+        {% if tags %}
+        {% include "components/tag_list.html" %}
+        {% endif %}
+        {% if section.pages %}
+        <h2>In this work</h2>
+        <ol class="work-pages">
+          {% for page in section.pages %}
+          <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+          {% endfor %}
+        </ol>
+          {% set first_page = section.pages | first %}
+          <p><a href="{{ first_page.permalink }}">Start reading</a></p>
+          {% endif %}
+      </article>
+    </main>
+  </body>
+</html>

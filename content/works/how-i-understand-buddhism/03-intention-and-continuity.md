@@ -1,11 +1,8 @@
 +++
 title = "How I Understand Buddhism: Intention and Continuity"
 date = 2026-10-19
+weight = 3
 description = "Intention, dependent origination, and mind-stream bring the series back to how actions shape experience."
-taxonomies = { tags = ["buddhism", "epistemology", "ethics"] }
-
-[extra]
-series = { title = "How I Understand Buddhism", part = 3 }
 +++
 
 ## Intention matters

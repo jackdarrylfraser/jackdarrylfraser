@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
   </head>
   <body>
+    {% if page.extra.series %}
+    {% set series_section = get_section(path=page.extra.series.path) %}
+    {% endif %}
     <main class="site-main">
-      <nav class="section-links" aria-label="Post navigation">
-        <a href="{{ config.base_url }}">Back to all posts</a>
+      <nav class="section-links work-navigation" aria-label="Post navigation">
+        <a href="{{ get_url(path='') }}">Back to all works</a>
       </nav>
       <article>
         <header>
@@ -21,14 +24,25 @@
           <p class="intro">{{ page.description }}</p>
           {% endif %}
           {% if page.extra.series %}
-          <p class="post-meta">{{ page.extra.series.title }} · Part {{ page.extra.series.part }}</p>
+          <p class="post-meta"><a href="{{ series_section.permalink }}">{{ page.extra.series.title }}</a> · Part {{ page.extra.series.part }}</p>
           {% endif %}
         </header>
+        {% if page.extra.series %}
+        {% include "components/series_navigation.html" %}
+        {% endif %}
         <div class="post-content">
           {{ page.content | safe }}
         </div>
-        {% if page.taxonomies.tags %}
-        {% include "tag_list.html" %}
+        {% if page.extra.series %}
+        {% set tags = series_section.extra.tags %}
+        {% elif page.taxonomies.tags %}
+        {% set tags = page.taxonomies.tags %}
+        {% endif %}
+        {% if tags %}
+        {% include "components/tag_list.html" %}
+        {% endif %}
+        {% if page.extra.series %}
+        {% include "components/series_navigation.html" %}
         {% endif %}
       </article>
     </main>
