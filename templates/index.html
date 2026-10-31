@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config.title | default(value="Blog") }}</title>
+  </head>
+  <body>
+    {% set blog = get_section(path="blog/_index.md") %}
+    <main>
+      <header>
+        <h1>{{ config.title | default(value="Blog") }}</h1>
+      </header>
+
+      <section aria-labelledby="latest-posts">
+        <h2 id="latest-posts">Latest posts</h2>
+        {% if blog.pages %}
+        <ul>
+          {% for page in blog.pages %}
+          <li>
+            <article>
+              <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+              {% if page.date %}
+              <time datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+              {% endif %}
+              {% if page.description %}
+              <p>{{ page.description }}</p>
+              {% endif %}
+            </article>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>No posts yet.</p>
+        {% endif %}
+      </section>
+    </main>
+  </body>
+</html>
