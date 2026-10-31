@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "outboundendurance.com"
+base_url = "https://outboundendurance.com"
 
 # Taxonomies available to content pages
 taxonomies = [{ name = "tags" }]
