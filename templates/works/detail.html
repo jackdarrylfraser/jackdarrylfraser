@@ -8,9 +8,10 @@
   </head>
   <body>
     <main class="site-main">
-      <nav class="section-links work-navigation" aria-label="Work navigation">
-        <a href="{{ get_url(path='') }}">Back to all works</a>
-      </nav>
+      {% set navigation_label = "Work navigation" %}
+      {% set navigation_url = get_url(path='') %}
+      {% set navigation_text = "Back to all works" %}
+      {% include "components/page_navigation.html" %}
       <article>
         <header>
           <h1>{{ section.title }}</h1>
