@@ -32,7 +32,8 @@ a {
 }
 
 .site-main {
-  width: min(100% - 2rem, 46rem);
+  width: calc(100% - 2rem);
+  max-width: 46rem;
   min-height: 75vh;
   margin-inline: auto;
   padding-block: 20px clamp(2.5rem, 8vw, 5rem);
