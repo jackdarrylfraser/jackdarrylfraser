@@ -7,28 +7,20 @@
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
   </head>
   <body>
-    <nav class="site-header" aria-label="Main navigation">
-      <a class="site-brand" href="{{ config.base_url }}">{{ config.title | default(value="Blog") }}</a>
-    </nav>
     <main class="site-main">
-      <header>
-        <p class="eyebrow">{{ taxonomy.name | capitalize }}</p>
+      <header class="section-heading">
         <h1>{{ term.name }}</h1>
+        <nav class="section-links" aria-label="Tag navigation">
+          <a href="{{ get_url(path='tags/') }}">Back to all tags</a>
+        </nav>
       </header>
 
       {% if term.pages %}
       <ul class="post-list">
+        {% set post_heading_level = 2 %}
         {% for page in term.pages %}
         <li>
-          <article class="post-card">
-            <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-            {% if page.date %}
-            <time class="post-meta" datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
-            {% endif %}
-            {% if page.description %}
-            <p>{{ page.description }}</p>
-            {% endif %}
-          </article>
+          {% include "post_card.html" %}
         </li>
         {% endfor %}
       </ul>
@@ -36,8 +28,5 @@
       <p>No posts found for this term.</p>
       {% endif %}
     </main>
-    <footer class="site-footer">
-      <a href="{{ config.base_url }}">Back to the homepage</a>
-    </footer>
   </body>
 </html>

@@ -3,28 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ taxonomy.name | capitalize }} | {{ config.title }}</title>
+    <title>{{ taxonomy.name }} | {{ config.title }}</title>
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
   </head>
   <body>
-    <nav class="site-header" aria-label="Main navigation">
-      <a class="site-brand" href="{{ config.base_url }}">{{ config.title | default(value="Blog") }}</a>
-    </nav>
     <main class="site-main">
-      <p class="eyebrow">Explore by topic</p>
-      <h1>{{ taxonomy.name | capitalize }}</h1>
-      <ul class="post-list">
+      <div class="section-heading">
+        <h1>{{ taxonomy.name }}</h1>
+        <nav class="section-links" aria-label="Tag navigation">
+          <a href="{{ config.base_url }}">Back to all posts</a>
+        </nav>
+      </div>
+      <ul class="tag-list" aria-label="Tags">
         {% for term in terms %}
-        <li class="post-card">
-          <a href="{{ term.permalink }}">{{ term.name }}</a>
+        <li>
           {% set post_count = term.pages | length %}
-          <span class="post-meta">{{ post_count }} {% if post_count == 1 %}post{% else %}posts{% endif %}</span>
+          <a href="{{ term.permalink }}">{{ term.name }} ({{ post_count }})</a>
         </li>
         {% endfor %}
       </ul>
     </main>
-    <footer class="site-footer">
-      <a href="{{ config.base_url }}">Back to the homepage</a>
-    </footer>
   </body>
 </html>

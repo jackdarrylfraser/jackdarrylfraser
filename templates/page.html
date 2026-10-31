@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
   </head>
   <body>
-    <nav class="site-header" aria-label="Main navigation">
-      <a class="site-brand" href="{{ config.base_url }}">{{ config.title | default(value="Blog") }}</a>
-    </nav>
     <main class="site-main">
+      <nav class="section-links" aria-label="Post navigation">
+        <a href="{{ config.base_url }}">Back to all posts</a>
+      </nav>
       <article>
         <header>
-          <p class="eyebrow"><a href="{{ get_url(path='blog/') }}">Blog</a></p>
           <h1>{{ page.title }}</h1>
           {% if page.date %}
           <time class="post-meta" datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
@@ -29,14 +28,9 @@
           {{ page.content | safe }}
         </div>
         {% if page.taxonomies.tags %}
-        <ul class="tag-list" aria-label="Tags">
-          {% for tag in page.taxonomies.tags %}
-          <li><a href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a></li>
-          {% endfor %}
-        </ul>
+        {% include "tag_list.html" %}
         {% endif %}
       </article>
     </main>
-    <footer class="site-footer"><a href="{{ config.base_url }}">Back to all writing</a></footer>
   </body>
 </html>
