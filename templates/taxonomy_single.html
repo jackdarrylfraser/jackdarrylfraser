@@ -18,32 +18,11 @@
       {% if term.pages %}
       <ul class="post-list">
         {% set post_heading_level = 2 %}
-        {% set tag_order = load_data(path="data/tag_order.toml") %}
-        {% set ordered_slugs = tag_order.tags[term.slug] | default(value=[]) %}
-        {% if ordered_slugs %}
-          {% for slug in ordered_slugs %}
-            {% for page in term.pages %}
-              {% if page.slug == slug %}
+        {% for page in term.pages %}
         <li>
           {% include "components/work_card.html" %}
         </li>
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
-          {% for page in term.pages %}
-            {% if page.slug not in ordered_slugs %}
-        <li>
-          {% include "components/work_card.html" %}
-        </li>
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          {% for page in term.pages %}
-        <li>
-          {% include "components/work_card.html" %}
-        </li>
-          {% endfor %}
-        {% endif %}
+        {% endfor %}
       </ul>
       {% else %}
       <p>No posts found for this term.</p>

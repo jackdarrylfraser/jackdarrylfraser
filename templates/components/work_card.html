@@ -5,13 +5,6 @@
   {% else %}
   <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
   {% endif %}
-  {% elif page.extra.series %}
-  {% set series_section = get_section(path=page.extra.series.path) %}
-  {% if post_heading_level == 3 %}
-  <h3><a href="{{ series_section.permalink }}">{{ series_section.title }}</a></h3>
-  {% else %}
-  <h2><a href="{{ series_section.permalink }}">{{ series_section.title }}</a></h2>
-  {% endif %}
   {% else %}
   {% if post_heading_level == 3 %}
   <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
@@ -28,11 +21,6 @@
   <p>{{ page.description }}</p>
   {% endif %}
   {% if page.pages %}
-  {% set tags = page.extra.tags %}
-  {% elif page.extra.series %}
-  {% set series_section = get_section(path=page.extra.series.path) %}
-  {% set tags = series_section.extra.tags %}
-  {% elif page.extra.tags %}
   {% set tags = page.extra.tags %}
   {% else %}
   {% set tags = page.taxonomies.tags %}

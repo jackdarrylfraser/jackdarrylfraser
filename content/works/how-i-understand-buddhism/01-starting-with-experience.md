@@ -1,12 +1,12 @@
 +++
-title = "How I Understand Buddhism: Starting with Experience"
+title = "Starting with Experience"
 date = 2026-10-17
 weight = 1
 description = "The Kālāma Sutta, skillful means, and the two truths offer a way into Buddhist ideas without asking us to accept them on authority alone."
 taxonomies = { tags = ["buddhism", "epistemology", "philosophy", "ethics"] }
 +++
 
-This is the first part of a three-part series about the Buddhist ideas that
+This is the first of three essays about the Buddhist ideas that
 have shaped how I think about experience, selfhood, and action. I am not trying
 to present every Buddhist tradition as if it said the same thing. I am tracing
 my own route through a few ideas, and asking what they make possible to see.
