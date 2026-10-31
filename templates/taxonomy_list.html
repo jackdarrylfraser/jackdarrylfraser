@@ -4,15 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ taxonomy.name | capitalize }} | {{ config.title }}</title>
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
   </head>
   <body>
-    <main>
+    <nav class="site-header" aria-label="Main navigation">
+      <a class="site-brand" href="{{ config.base_url }}">{{ config.title | default(value="Blog") }}</a>
+    </nav>
+    <main class="site-main">
+      <p class="eyebrow">Explore by topic</p>
       <h1>{{ taxonomy.name | capitalize }}</h1>
-      <ul>
+      <ul class="post-list">
         {% for term in terms %}
-        <li><a href="{{ term.permalink }}">{{ term.name }}</a> ({{ term.pages | length }})</li>
+        <li class="post-card">
+          <a href="{{ term.permalink }}">{{ term.name }}</a>
+          {% set post_count = term.pages | length %}
+          <span class="post-meta">{{ post_count }} {% if post_count == 1 %}post{% else %}posts{% endif %}</span>
+        </li>
         {% endfor %}
       </ul>
     </main>
+    <footer class="site-footer">
+      <a href="{{ config.base_url }}">Back to the homepage</a>
+    </footer>
   </body>
 </html>

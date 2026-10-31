@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ config.title | default(value="Blog") }}</title>
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+  </head>
+  <body>
+    <nav class="site-header" aria-label="Main navigation">
+      <a class="site-brand" href="{{ config.base_url }}">{{ config.title | default(value="Blog") }}</a>
+    </nav>
+    <main class="site-main">
+      <article>
+        <header>
+          <p class="eyebrow"><a href="{{ get_url(path='blog/') }}">Blog</a></p>
+          <h1>{{ page.title }}</h1>
+          {% if page.date %}
+          <time class="post-meta" datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+          {% endif %}
+          {% if page.description %}
+          <p class="intro">{{ page.description }}</p>
+          {% endif %}
+          {% if page.extra.series %}
+          <p class="post-meta">{{ page.extra.series.title }} · Part {{ page.extra.series.part }}</p>
+          {% endif %}
+        </header>
+        <div class="post-content">
+          {{ page.content | safe }}
+        </div>
+        {% if page.taxonomies.tags %}
+        <ul class="tag-list" aria-label="Tags">
+          {% for tag in page.taxonomies.tags %}
+          <li><a href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </article>
+    </main>
+    <footer class="site-footer"><a href="{{ config.base_url }}">Back to all writing</a></footer>
+  </body>
+</html>

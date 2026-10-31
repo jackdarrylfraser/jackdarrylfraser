@@ -4,24 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config.title | default(value="Blog") }}</title>
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
   </head>
   <body>
     {% set blog = get_section(path="blog/_index.md") %}
-    <main>
+    <nav class="site-header" aria-label="Main navigation">
+      <a class="site-brand" href="{{ config.base_url }}">{{ config.title | default(value="Blog") }}</a>
+    </nav>
+    <main class="site-main">
       <header>
+        <p class="eyebrow">Notes on learning and living</p>
         <h1>{{ config.title | default(value="Blog") }}</h1>
+        <p class="intro">Ideas, questions, and paths worth exploring.</p>
       </header>
-
       <section aria-labelledby="latest-posts">
-        <h2 id="latest-posts">Latest posts</h2>
+        <h2 id="latest-posts">Recent writing</h2>
         {% if blog.pages %}
-        <ul>
+        <ul class="post-list">
           {% for page in blog.pages %}
           <li>
-            <article>
+            <article class="post-card">
               <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
               {% if page.date %}
-              <time datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+              <time class="post-meta" datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
               {% endif %}
               {% if page.description %}
               <p>{{ page.description }}</p>
@@ -35,5 +40,8 @@
         {% endif %}
       </section>
     </main>
+    <footer class="site-footer">
+      <a href="{{ get_url(path='tags/') }}">Browse all tags</a>
+    </footer>
   </body>
 </html>
