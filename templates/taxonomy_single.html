@@ -8,12 +8,19 @@
   </head>
   <body>
     <main class="site-main">
-      <header class="section-heading">
-        <h1>{{ term.name }}</h1>
-        <nav class="section-links" aria-label="Tag navigation">
-          <a href="{{ get_url(path='tags/') }}">Back to all tags</a>
-        </nav>
-      </header>
+      {% set heading_title = term.name %}
+      {% set heading_id = "" %}
+      {% set heading_left_navigation_label = "Tag navigation" %}
+      {% set heading_left_navigation_url = get_url(path='tags/') %}
+      {% set heading_left_navigation_text = "Back to all tags" %}
+      {% set heading_right_navigation_label = "" %}
+      {% set heading_right_navigation_url = "" %}
+      {% set heading_right_navigation_text = "" %}
+      {% set heading_date = "" %}
+      {% set heading_date_display = "" %}
+      {% set heading_description = "" %}
+      {% set heading_tags = [] %}
+      {% include "components/section_heading.html" %}
 
       {% if term.pages %}
       <ul class="post-list">

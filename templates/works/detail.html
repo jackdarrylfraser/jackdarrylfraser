@@ -8,27 +8,30 @@
   </head>
   <body>
     <main class="site-main">
-      {% set navigation_label = "Work navigation" %}
-      {% set navigation_url = get_url(path='') %}
-      {% set navigation_text = "Back to all works" %}
-      {% include "components/page_navigation.html" %}
       <article>
-        <header>
-          <h1>{{ section.title }}</h1>
-          {% if section.extra.date %}
-          <time class="post-meta" datetime="{{ section.extra.date }}">{{ section.extra.date | date(format="%B %e, %Y") }}</time>
-          {% endif %}
-          {% if section.description %}
-          <p class="intro">{{ section.description }}</p>
-          {% endif %}
-        </header>
+        {% set heading_title = section.title %}
+        {% set heading_id = "" %}
+        {% set heading_left_navigation_label = "Work navigation" %}
+        {% set heading_left_navigation_url = get_url(path='') %}
+        {% set heading_left_navigation_text = "Back to all works" %}
+        {% set heading_right_navigation_label = "" %}
+        {% set heading_right_navigation_url = "" %}
+        {% set heading_right_navigation_text = "" %}
+        {% set heading_date = "" %}
+        {% set heading_date_display = "" %}
+        {% set heading_description = "" %}
+        {% set heading_tags = section.extra.tags %}
+        {% if section.extra.date %}
+        {% set heading_date = section.extra.date %}
+        {% set heading_date_display = section.extra.date | date(format="%B %e, %Y") %}
+        {% endif %}
+        {% if section.description %}
+        {% set heading_description = section.description %}
+        {% endif %}
+        {% include "components/section_heading.html" %}
         <div class="post-content">
           {{ section.content | safe }}
         </div>
-        {% set tags = section.extra.tags %}
-        {% if tags %}
-        {% include "components/tag_list.html" %}
-        {% endif %}
         {% if section.pages %}
         <h2>In this work</h2>
         <ol class="work-pages">

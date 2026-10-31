@@ -8,27 +8,27 @@
   </head>
   <body>
     <main class="site-main">
-      {% set navigation_label = "Post navigation" %}
-      {% set navigation_url = get_url(path='') %}
-      {% set navigation_text = "Back to all works" %}
-      {% include "components/page_navigation.html" %}
       <article>
-        <header>
-          <h1>{{ page.title }}</h1>
-          {% if page.date %}
-          <time class="post-meta" datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
-          {% endif %}
-          {% if page.description %}
-          <p class="intro">{{ page.description }}</p>
-          {% endif %}
-        </header>
+        {% set heading_title = page.title %}
+        {% set heading_id = "" %}
+        {% set heading_left_navigation_label = "Post navigation" %}
+        {% set heading_left_navigation_url = get_url(path='') %}
+        {% set heading_left_navigation_text = "Back to all works" %}
+        {% set heading_right_navigation_label = "" %}
+        {% set heading_right_navigation_url = "" %}
+        {% set heading_right_navigation_text = "" %}
+        {% set heading_date = "" %}
+        {% set heading_date_display = "" %}
+        {% set heading_description = "" %}
+        {% set heading_tags = page.taxonomies.tags %}
+        {% if page.date %}
+        {% set heading_date = page.date %}
+        {% set heading_date_display = page.date | date(format="%B %e, %Y") %}
+        {% endif %}
+        {% include "components/section_heading.html" %}
         <div class="post-content">
           {{ page.content | safe }}
         </div>
-        {% set tags = page.taxonomies.tags %}
-        {% if tags %}
-        {% include "components/tag_list.html" %}
-        {% endif %}
       </article>
     </main>
   </body>

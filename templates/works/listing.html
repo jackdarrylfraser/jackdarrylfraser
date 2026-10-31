@@ -1,11 +1,18 @@
 <section aria-labelledby="works-heading">
   {% set works = get_section(path="works/_index.md") %}
-  <div class="section-heading">
-    <h1 id="works-heading">{{ listing_title }}</h1>
-    <nav class="section-links" aria-label="More content">
-      <a href="{{ get_url(path='tags/') }}">View all tags</a>
-    </nav>
-  </div>
+  {% set heading_title = listing_title %}
+  {% set heading_id = "works-heading" %}
+  {% set heading_left_navigation_label = "" %}
+  {% set heading_left_navigation_url = "" %}
+  {% set heading_left_navigation_text = "" %}
+  {% set heading_right_navigation_label = "More content" %}
+  {% set heading_right_navigation_url = get_url(path='tags/') %}
+  {% set heading_right_navigation_text = "View all tags" %}
+  {% set heading_date = "" %}
+  {% set heading_date_display = "" %}
+  {% set heading_description = "" %}
+  {% set heading_tags = [] %}
+  {% include "components/section_heading.html" %}
   {% if works.pages or works.subsections %}
   <ul class="post-list">
     {% set post_heading_level = 2 %}

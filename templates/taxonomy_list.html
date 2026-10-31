@@ -8,12 +8,19 @@
   </head>
   <body>
     <main class="site-main">
-      <div class="section-heading">
-        <h1>{{ taxonomy.name }}</h1>
-        <nav class="section-links" aria-label="Tag navigation">
-          <a href="{{ config.base_url }}">Back to all posts</a>
-        </nav>
-      </div>
+      {% set heading_title = taxonomy.name %}
+      {% set heading_id = "" %}
+      {% set heading_left_navigation_label = "Tag navigation" %}
+      {% set heading_left_navigation_url = config.base_url %}
+      {% set heading_left_navigation_text = "Back to all posts" %}
+      {% set heading_right_navigation_label = "" %}
+      {% set heading_right_navigation_url = "" %}
+      {% set heading_right_navigation_text = "" %}
+      {% set heading_date = "" %}
+      {% set heading_date_display = "" %}
+      {% set heading_description = "" %}
+      {% set heading_tags = [] %}
+      {% include "components/section_heading.html" %}
       <ul class="tag-list" aria-label="Tags">
         {% for term in terms %}
         <li>

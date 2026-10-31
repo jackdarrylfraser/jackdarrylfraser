@@ -1,0 +1,32 @@
+<header class="section-heading">
+  <div class="section-heading-navigation{% if not heading_left_navigation_text %} section-heading-navigation-right-only{% endif %}">
+    {% if heading_left_navigation_text %}
+    <nav class="section-links" aria-label="{{ heading_left_navigation_label }}">
+      <a href="{{ heading_left_navigation_url }}">{{ heading_left_navigation_text }}</a>
+    </nav>
+    {% endif %}
+    {% if heading_right_navigation_text %}
+    <nav class="section-links" aria-label="{{ heading_right_navigation_label }}">
+      <a href="{{ heading_right_navigation_url }}">{{ heading_right_navigation_text }}</a>
+    </nav>
+    {% endif %}
+  </div>
+  <div class="section-heading-content">
+    <h1{% if heading_id %} id="{{ heading_id }}"{% endif %}>{{ heading_title }}</h1>
+    {% if heading_date or heading_tags %}
+    <div class="section-heading-meta">
+      {% if heading_date %}
+      <time class="post-meta" datetime="{{ heading_date }}">{{ heading_date_display }}</time>
+      {% endif %}
+      {% if heading_tags %}
+      {% if heading_date %}<span class="section-heading-divider" aria-hidden="true">-</span>{% endif %}
+      {% set tags = heading_tags %}
+      {% include "components/tag_list.html" %}
+      {% endif %}
+    </div>
+    {% endif %}
+    {% if heading_description %}
+    <p class="intro">{{ heading_description }}</p>
+    {% endif %}
+  </div>
+</header>
