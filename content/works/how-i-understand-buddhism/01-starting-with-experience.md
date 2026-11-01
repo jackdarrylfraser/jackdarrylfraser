@@ -2,6 +2,19 @@
 title = "Starting with Experience"
 date = 2026-10-17
 taxonomies = { tags = ["buddhism", "epistemology", "philosophy", "ethics"] }
+
+[extra.heading]
+id = ""
+
+[extra.heading.left_navigation]
+label = "Post navigation"
+url = ""
+text = "Back to all works"
+
+[extra.heading.right_navigation]
+label = ""
+url = ""
+text = ""
 +++
 
 The Kālāma Sutta, skillful means, and the two truths offer a way into Buddhist
@@ -9,10 +22,10 @@ ideas without asking us to accept them on authority alone.
 
 <!-- excerpt -->
 
-This is the first of three essays about the Buddhist ideas that
-have shaped how I think about experience, selfhood, and action. I am not trying
-to present every Buddhist tradition as if it said the same thing. I am tracing
-my own route through a few ideas, and asking what they make possible to see.
+This is the first of three essays about the Buddhist ideas that have shaped how
+I think about experience, selfhood, and action. I am not trying to present every
+Buddhist tradition as if it said the same thing. I am tracing my own route
+through a few ideas, and asking what they make possible to see.
 
 ## Begin with what can be tested
 
@@ -28,14 +41,14 @@ studying and sitting stayed with me, though I could not yet explain why.
 
 ## Teachings as skillful means
 
-The idea of *upāya*, or skillful means, gives me another way to approach
+The idea of _upāya_, or skillful means, gives me another way to approach
 teachings. A teaching can be useful as a guide or approximation without being
 the final word about reality. Its value partly depends on what it helps someone
 notice or do.
 
 That makes it possible to take an idea seriously without treating every
-formulation as complete or literal. A teaching can meet a person where they
-are, help them move, and still leave room to revise their understanding.
+formulation as complete or literal. A teaching can meet a person where they are,
+help them move, and still leave room to revise their understanding.
 
 ## Two truths, two kinds of description
 
@@ -44,9 +57,9 @@ Conventional truths are the distinctions and descriptions that make ordinary
 life intelligible: people, events, names, and responsibilities. They are useful
 and consequential in everyday life.
 
-Ultimate truth, is not simply another everyday fact. It questions their
-ultimate nature at the very bottom of all things regardless of what we might
-percieve day to day or the circumstances that we are born into.
+Ultimate truth, is not simply another everyday fact. It questions their ultimate
+nature at the very bottom of all things regardless of what we might percieve day
+to day or the circumstances that we are born into.
 
 I find it helpful to keep both kinds of description in view. Ordinary
 distinctions matter, but they need not tell us everything. That question leads

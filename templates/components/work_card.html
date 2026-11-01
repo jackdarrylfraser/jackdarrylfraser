@@ -1,40 +1,42 @@
 <article class="post-card">
-  {% if page.pages %}
-  {% if post_heading_level == 3 %}
-  <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
-  {% else %}
-  <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-  {% endif %}
-  {% else %}
-  {% if post_heading_level == 3 %}
-  <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
-  {% else %}
-  <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-  {% endif %}
-  {% endif %}
-  {% if page.date %}
-  <time class="post-meta" datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
-  {% elif page.extra.date %}
-  <time class="post-meta" datetime="{{ page.extra.date }}">{{ page.extra.date | date(format="%B %e, %Y") }}</time>
-  {% endif %}
-  {% if page.content %}
-  {% set excerpt_parts = page.content | split(pat="<!-- excerpt -->") %}
-  {% if excerpt_parts | length > 1 %}
-  <div class="post-card-excerpt">{{ excerpt_parts | first | safe }}</div>
-  {% elif page.description %}
-  <p>{{ page.description }}</p>
-  {% endif %}
-  {% elif page.description %}
-  <p>{{ page.description }}</p>
-  {% endif %}
-  {% if page.pages %}
-  {% set tags = [] %}
-  {% set tag_pages = page.pages %}
-  {% else %}
-  {% set tags = page.taxonomies.tags %}
-  {% set tag_pages = [] %}
-  {% endif %}
-  {% if tags or tag_pages %}
-  {% include "components/tag_list.html" %}
-  {% endif %}
+    {% if page.pages %}
+    {% if post_heading_level == 3 %}
+    <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+    {% else %}
+    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+    {% endif %}
+    {% else %}
+    {% if post_heading_level == 3 %}
+    <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+    {% else %}
+    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+    {% endif %}
+    {% endif %}
+    {% if page.date %}
+    <time class="post-meta" datetime="{{ page.date }}">{{ page.date |
+        date(format="%B %e, %Y") }}</time>
+    {% elif page.extra.date %}
+    <time class="post-meta" datetime="{{ page.extra.date }}">{{ page.extra.date
+        | date(format="%B %e, %Y") }}</time>
+    {% endif %}
+    {% if page.content %}
+    {% set excerpt_parts = page.content | split(pat="<!-- excerpt -->") %}
+    {% if excerpt_parts | length > 1 %}
+    <div class="post-card-excerpt">{{ excerpt_parts | first | safe }}</div>
+    {% elif page.description %}
+    <p>{{ page.description }}</p>
+    {% endif %}
+    {% elif page.description %}
+    <p>{{ page.description }}</p>
+    {% endif %}
+    {% if page.pages %}
+    {% set tags = [] %}
+    {% set tag_pages = page.pages %}
+    {% else %}
+    {% set tags = page.taxonomies.tags %}
+    {% set tag_pages = [] %}
+    {% endif %}
+    {% if tags or tag_pages %}
+    {% include "components/tag_list.html" %}
+    {% endif %}
 </article>

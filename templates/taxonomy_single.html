@@ -1,40 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ term.name }} | {{ config.title }}</title>
-    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
-  </head>
-  <body>
-    <main class="site-main">
-      {% set heading_title = term.name %}
-      {% set heading_id = "" %}
-      {% set heading_left_navigation_label = "Tag navigation" %}
-      {% set heading_left_navigation_url = get_url(path='tags/') %}
-      {% set heading_left_navigation_text = "Back to all tags" %}
-      {% set heading_right_navigation_label = "" %}
-      {% set heading_right_navigation_url = "" %}
-      {% set heading_right_navigation_text = "" %}
-      {% set heading_date = "" %}
-      {% set heading_date_display = "" %}
-      {% set heading_description = "" %}
-      {% set heading_tags = [] %}
-      {% set heading_show_tags = false %}
-      {% include "components/section_heading.html" %}
 
-      {% if term.pages %}
-      <ul class="post-list">
-        {% set post_heading_level = 2 %}
-        {% for page in term.pages %}
-        <li>
-          {% include "components/work_card.html" %}
-        </li>
-        {% endfor %}
-      </ul>
-      {% else %}
-      <p>No posts found for this term.</p>
-      {% endif %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ term.name }} | {{ config.title }}</title>
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
+</head>
+
+<body>
+    <main class="site-main">
+        {% include "components/section_heading.html" %}
+        {% if term.pages %}
+        <ul class="post-list">
+            {% set post_heading_level = 2 %} {% for page in term.pages %}
+            <li>{% include "components/work_card.html" %}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No posts found for this term.</p>
+        {% endif %}
     </main>
-  </body>
+</body>
+
 </html>

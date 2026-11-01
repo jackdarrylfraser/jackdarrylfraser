@@ -1,15 +1,17 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ config.title | default(value="Blog") }}</title>
-    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
-  </head>
-  <body>
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
+</head>
+
+<body>
     <main class="site-main">
-      {% set listing_title = "Recent writing" %}
-      {% include "works/listing.html" %}
+        {% include "works/listing.html" %}
     </main>
-  </body>
+</body>
+
 </html>

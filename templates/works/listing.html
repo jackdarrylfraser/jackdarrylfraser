@@ -1,36 +1,23 @@
 <section aria-labelledby="works-heading">
-  {% set works = get_section(path="works/_index.md") %}
-  {% set heading_title = listing_title %}
-  {% set heading_id = "works-heading" %}
-  {% set heading_left_navigation_label = "" %}
-  {% set heading_left_navigation_url = "" %}
-  {% set heading_left_navigation_text = "" %}
-  {% set heading_right_navigation_label = "More content" %}
-  {% set heading_right_navigation_url = get_url(path='tags/') %}
-  {% set heading_right_navigation_text = "View all tags" %}
-  {% set heading_date = "" %}
-  {% set heading_date_display = "" %}
-  {% set heading_description = "" %}
-  {% set heading_tags = [] %}
-  {% set heading_show_tags = false %}
-  {% include "components/section_heading.html" %}
-  {% if works.pages or works.subsections %}
-  <ul class="post-list">
-    {% set post_heading_level = 2 %}
-    {% for work_section_path in works.subsections %}
-    {% set page = get_section(path=work_section_path) %}
-    <li>
-      {% include "components/work_card.html" %}
-    </li>
-    {% endfor %}
-    {% for work_page in works.pages %}
-    {% set page = work_page %}
-    <li>
-      {% include "components/work_card.html" %}
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p>No works yet.</p>
-  {% endif %}
+    {% set works = get_section(path="works/_index.md") %}
+    {% include "components/section_heading.html" %}
+    {% if works.pages or works.subsections %}
+    <ul class="post-list">
+        {% set post_heading_level = 2 %}
+        {% for work_section_path in works.subsections %}
+        {% set page = get_section(path=work_section_path) %}
+        <li>
+            {% include "components/work_card.html" %}
+        </li>
+        {% endfor %}
+        {% for work_page in works.pages %}
+        {% set page = work_page %}
+        <li>
+            {% include "components/work_card.html" %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No works yet.</p>
+    {% endif %}
 </section>

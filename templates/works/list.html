@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ section.title }} | {{ config.title | default(value="Blog") }}</title>
+    <title>{{ section.title }} | {{ config.title | default(value="Blog") }}
+    </title>
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
-  </head>
-  <body>
+</head>
+
+<body>
     <main class="site-main">
-      {% set listing_title = section.title %}
-      {% include "works/listing.html" %}
+        {% include "works/listing.html" %}
     </main>
-  </body>
+</body>
+
 </html>

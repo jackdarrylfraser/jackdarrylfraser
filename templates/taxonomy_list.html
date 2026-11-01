@@ -1,35 +1,25 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ taxonomy.name }} | {{ config.title }}</title>
-    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
-  </head>
-  <body>
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
+</head>
+
+<body>
     <main class="site-main">
-      {% set heading_title = taxonomy.name %}
-      {% set heading_id = "" %}
-      {% set heading_left_navigation_label = "Tag navigation" %}
-      {% set heading_left_navigation_url = config.base_url %}
-      {% set heading_left_navigation_text = "Back to all posts" %}
-      {% set heading_right_navigation_label = "" %}
-      {% set heading_right_navigation_url = "" %}
-      {% set heading_right_navigation_text = "" %}
-      {% set heading_date = "" %}
-      {% set heading_date_display = "" %}
-      {% set heading_description = "" %}
-      {% set heading_tags = [] %}
-      {% set heading_show_tags = false %}
-      {% include "components/section_heading.html" %}
-      <ul class="tag-list" aria-label="Tags">
-        {% for term in terms %}
-        <li>
-          {% set post_count = term.pages | length %}
-          <a href="{{ term.permalink }}">{{ term.name }} ({{ post_count }})</a>
-        </li>
-        {% endfor %}
-      </ul>
+        {% include "components/section_heading.html" %}
+        <ul class="tag-list" aria-label="Tags">
+            {% for term in terms %}
+            <li>
+                <a href="{{ term.permalink }}">{{ term.name }} ({{ term.pages |
+                    length }})</a>
+            </li>
+            {% endfor %}
+        </ul>
     </main>
-  </body>
+</body>
+
 </html>

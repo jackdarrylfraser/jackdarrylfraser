@@ -3,6 +3,19 @@ title = "What I Mean When I Talk About Vectors"
 date = 2026-10-20
 weight = 20261020
 taxonomies = { tags = ["vectors", "writing", "knowledge"] }
+
+[extra.heading]
+id = ""
+
+[extra.heading.left_navigation]
+label = "Post navigation"
+url = ""
+text = "Back to all works"
+
+[extra.heading.right_navigation]
+label = ""
+url = ""
+text = ""
 +++
 
 Vectors can be useful ways to describe direction and growth, but a site's tags
