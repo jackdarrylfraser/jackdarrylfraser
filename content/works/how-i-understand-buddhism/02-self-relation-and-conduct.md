@@ -1,7 +1,6 @@
 +++
 title = "Self, Relation, and Conduct"
 date = 2026-10-18
-weight = 2
 taxonomies = { tags = ["buddhism", "epistemology", "philosophy", "ethics"] }
 +++
 

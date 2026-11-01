@@ -1,6 +1,6 @@
 +++
 title = "How I Understand Buddhism"
-sort_by = "weight"
+sort_by = "slug"
 weight = 20261017
 template = "works/detail.html"
 
@@ -8,7 +8,7 @@ template = "works/detail.html"
 date = 2026-10-17
 +++
 
-Three essays tracing my developing understanding of Buddhist teachings through
+Four essays tracing my developing understanding of Buddhist teachings through
 experience, selfhood, conduct, and continuity.
 
 <!-- excerpt -->

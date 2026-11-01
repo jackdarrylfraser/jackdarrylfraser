@@ -1,7 +1,6 @@
 +++
 title = "Intention and Continuity"
 date = 2026-10-19
-weight = 3
 taxonomies = { tags = ["buddhism", "epistemology", "philosophy", "ethics"] }
 +++
 
@@ -33,12 +32,6 @@ For me, this gives a more precise direction to the earlier idea of
 interdependence. Relationships are not just links between independently
 complete things. Instead nothing in the web exists entirely different from anything else and the relationships between each thing is what gives it it's defition. 
 
-## A stream without an enduring owner
-
-The idea of a mind-stream, or *citta-santāna*, offers one way to talk about the
-continuity of conscious experience without assuming an enduring self. One
-moment conditions another; continuity does not have to mean that an unchanged
-owner persists through every moment.
 
 This is a philosophical possibility, not something I can settle by naming it.
 Questions about consciousness and other minds remain difficult. We recognize

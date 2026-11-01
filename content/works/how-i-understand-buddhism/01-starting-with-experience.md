@@ -1,7 +1,6 @@
 +++
 title = "Starting with Experience"
 date = 2026-10-17
-weight = 1
 taxonomies = { tags = ["buddhism", "epistemology", "philosophy", "ethics"] }
 +++
 
