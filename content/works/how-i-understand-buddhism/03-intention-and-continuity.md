@@ -20,7 +20,7 @@ text = ""
 Intention, dependent origination, and mind-stream bring the discussion back to
 how actions shape experience.
 
-<!-- excerpt -->
+<!-- more -->
 
 ## Intention matters
 

@@ -20,7 +20,7 @@ text = ""
 The Kālāma Sutta, skillful means, and the two truths offer a way into Buddhist
 ideas without asking us to accept them on authority alone.
 
-<!-- excerpt -->
+<!-- more -->
 
 This is the first of three essays about the Buddhist ideas that have shaped how
 I think about experience, selfhood, and action. I am not trying to present every

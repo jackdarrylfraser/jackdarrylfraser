@@ -20,7 +20,7 @@ text = ""
 Intention, dependent origination, and mind-stream bring the discussion back to
 how actions shape experience.
 
-<!-- excerpt -->
+<!-- more -->
 
 This brings us to the ideas through which many people first encounter Buddhism:
 karma as more than ordinary cause and effect, and rebirth after death.

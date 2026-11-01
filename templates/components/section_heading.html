@@ -72,29 +72,16 @@
                     {% if page.date %}<span class="section-heading-divider"
                         aria-hidden="true">-</span>{% endif %}
                     {% set tags = page.taxonomies.tags %}
-                    {% set tag_pages = [] %}
                     {% include "components/tag_list.html" %}
                     {% endif %}
                 </div>
                 {% endif %}
                 {% elif section is defined %}
-                {% if section.extra.date or
-                (section.extra.heading.show_child_tags and section.pages) %}
+                {% if section.extra.date %}
                 <div class="section-heading-meta">
-                    {% if section.extra.date %}
                     <time class="post-meta"
                         datetime="{{ section.extra.date }}">{{
                         section.extra.date | date(format="%B %e, %Y") }}</time>
-                    {% endif %}
-                    {% if section.extra.heading.show_child_tags and
-                    section.pages %}
-                    {% if section.extra.date %}<span
-                        class="section-heading-divider"
-                        aria-hidden="true">-</span>{% endif %}
-                    {% set tags = [] %}
-                    {% set tag_pages = section.pages %}
-                    {% include "components/tag_list.html" %}
-                    {% endif %}
                 </div>
                 {% endif %}
                 {% endif %}

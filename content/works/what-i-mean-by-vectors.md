@@ -21,7 +21,7 @@ text = ""
 Vectors can be useful ways to describe direction and growth, but a site's tags
 and writing may communicate them better than fixed categories.
 
-<!-- excerpt -->
+<!-- more -->
 
 I have used the word *vector* for a deliberate direction of learning: a set of
 ideas and practices that build on one another. The metaphor is useful. A vector

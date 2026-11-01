@@ -9,7 +9,6 @@ date = 2026-10-17
 
 [extra.heading]
 id = ""
-show_child_tags = true
 
 [extra.heading.left_navigation]
 label = "Work navigation"
@@ -38,4 +37,4 @@ knowledge but as a set of traditions for examining experience, shaping conduct,
 and working with questions science does not aim to resolve. The essays follow
 that inquiry through experience, selfhood, conduct, and continuity.
 
-<!-- excerpt -->
+<!-- more -->

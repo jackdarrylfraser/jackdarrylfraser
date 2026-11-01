@@ -5,7 +5,6 @@ sort_by = "date"
 [extra.heading]
 title = "Recent writing"
 id = "works-heading"
-show_child_tags = false
 
 [extra.heading.left_navigation]
 label = ""

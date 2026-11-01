@@ -20,7 +20,7 @@ text = ""
 The questions of non-self and interdependence lead from the experience of mind
 into ethical ways of living.
 
-<!-- excerpt -->
+<!-- more -->
 
 In the first part, I described framings for how I find Buddhist teachings the
 most acciesible rather than conclusions to accept on authority. Here I use those
