@@ -15,7 +15,7 @@ This brings us to the ideas through which many people first encounter Buddhism: 
 
 When I paid attention to my experience, I found a kind of moment-to-moment continuity that helped me understand the language of rebirth. Many of my thoughts seemed to arise without my choosing them. When I tried to find the thought that felt most like “me,” I was often drawn to the most emotional ones. Often before I could even recognize a thought was happening, I was already attached to it; carrying it out in day to day life or making plans to. It was impossible to discern that I had not authored it.
 
-Following that observation led me to question how much control I have over my emotions. Many arise in response to conditions I did not choose. This made me feel like I had no agency, and it made a fixed, independent self harder to locate. Even the thoughts that feel most convincingly like “me” seem to depend on causes and conditions.
+Following that observation led me to question how much control I have over my emotions. Many arise in response to conditions I did not choose. This made me feel like I had no agency, and it made a fixed, independent self harder to locate. Even the thoughts that feel most convincingly like “me” seem to depend on causes and conditions that were verifiably not me.
 
 The image of a person as a wave in the ocean helped me make sense of this. The water molecules change, but the wave continues as a recognizable pattern. In the same way, the person can be understood as a continuity through change rather than as an unchanging essence. The wave eventually breaks on the shore, which also makes the image a moving metaphor for death, decomposition, and the return of our bodies to the wider processes of life.
 
