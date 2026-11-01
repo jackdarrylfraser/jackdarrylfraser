@@ -1,31 +1,11 @@
 <article class="post-card">
-    {% if page.pages %}
-    {% if post_heading_level == 3 %}
     <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
-    {% else %}
-    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-    {% endif %}
-    {% else %}
-    {% if post_heading_level == 3 %}
-    <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
-    {% else %}
-    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-    {% endif %}
-    {% endif %}
-    {% if page.date %}
+    
     <time class="post-meta" datetime="{{ page.date }}">{{ page.date |
         date(format="%B %e, %Y") }}</time>
-    {% elif page.extra.date %}
-    <time class="post-meta" datetime="{{ page.extra.date }}">{{ page.extra.date
-        | date(format="%B %e, %Y") }}</time>
-    {% endif %}
-    {% if page.summary %}
+
     <div class="post-card-excerpt">{{ page.summary | safe }}</div>
-    {% elif page.description %}
-    <p>{{ page.description }}</p>
-    {% endif %}
-    {% if page.taxonomies.tags %}
+
     {% set tags = page.taxonomies.tags %}
     {% include "components/tag_list.html" %}
-    {% endif %}
 </article>
